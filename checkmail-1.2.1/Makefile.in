@@ -1,0 +1,21 @@
+CC		= @CC@
+CFLAGS		= @CFLAGS@
+INCLUDE		= -I.
+LIBS            = 
+CFLAGS_ALL	= $(CFLAGS) @DEFS@ $(INCLUDE)
+
+OBJS	= checkmail.o
+SRCS	= checkmail.c
+
+.c.o:
+	$(CC) -c $(CFLAGS_ALL) $<
+
+checkmail: $(OBJS)
+	$(CC) -o checkmail $(OBJS) $(LIBS)
+
+all: checkmail
+
+clean:
+	rm -f config.log core *.o checkmail
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.

@@ -1,0 +1,27 @@
+# Process this file with autoconf to produce a configure script.
+AC_INIT(ipfw Billing, 2.0.2, nmorozov@atlas-print.ru)
+AC_CONFIG_SRCDIR([src/logf.c])
+AC_CONFIG_HEADER([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([stdlib.h string.h time.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_CHECK_FUNCS(stricmp strcasecmp)
+AC_CHECK_LIB(crypt, crypt)
+AC_CHECK_LIB(m, floor)
+#AC_CHECK_LIB(mn, GetToken)
+#AC_CHECK_LIB(gds, isc_attach_database, LIBS_IB="-lgds $LIBS_IB",AC_CHECK_LIB(fbclient, isc_attach_database, LIBS_IB="-lgds $LIBS_IB"))
+AC_CHECK_LIB(fbclient, isc_attach_database, LIBS_IB="-lfbclient $LIBS_IB")
+AC_SUBST(LIBS_IB)
+
+AC_CONFIG_FILES([])
+AC_OUTPUT([mnlib3/Makefile src/Makefile])

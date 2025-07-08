@@ -1,0 +1,33 @@
+		    checkmail INSTALL HOWTO
+
+1) uudeview
+ checkmail depend on uudeview program (http://www.uni-frankfurt.de/~fp/uudeview/)
+ You can remove uudeview support by simple code correction
+
+2) compilation procedure
+  ./configure
+  make
+  copy chekmail executable in /usr/local/sbin
+
+3) sendmail m4 install
+  add this lines to your .mc file
+  
+dnl Change Mlocal
+define(`LOCAL_MAILER_PATH', `/usr/local/sbin/checkmail')dnl
+define(`LOCAL_MAILER_ARGS', `checkmail -d $u,
+		U=root:mail')
+MODIFY_MAILER_FLAGS(`LOCAL', `-m')dnl
+
+4) sendmail .cf install
+ Chage block for Mlocal to this
+
+Mlocal,		P=/usr/local/sbin/checkmail, F=lsDFMAw5:/|@qPrn9, S=EnvFromL/HdrFromL, R=EnvToL/HdrToL,
+		T=DNS/RFC822/X-Unix,
+		A=checkmail -d $u,
+		U=root:mail
+
+5) postfix install
+ Add or change mailbox_command in your main.cf to this
+
+ mailbox_command = /usr/local/sbin/checkmail -d $USER
+

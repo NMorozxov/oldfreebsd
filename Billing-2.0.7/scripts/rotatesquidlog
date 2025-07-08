@@ -1,0 +1,2 @@
+#!/bin/sh
+/bin/mv /usr/local/squid/var/logs/access.log /usr/local/squid/var/logs/`date "+%Y%m%d"`.log ; /usr/bin/killall -HUP squid

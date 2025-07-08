@@ -1,0 +1,20 @@
+# Process this file with autoconf to produce a configure script.
+AC_INIT
+AC_CONFIG_SRCDIR([checkmail.c])
+AC_CONFIG_HEADER([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_CHECK_HEADERS([stdlib.h syslog.h sysexits.h time.h sys/time.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_CHECK_FUNCS([srandom srandomdev])
+
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT

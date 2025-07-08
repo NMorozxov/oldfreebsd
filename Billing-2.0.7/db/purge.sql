@@ -1,0 +1,1 @@
+delete from log where extract(month from ins_date)<11 or extract(year from ins_date)<2004

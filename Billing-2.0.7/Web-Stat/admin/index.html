@@ -1,0 +1,89 @@
+<html>
+<head>
+ <meta HTTP-EQUIV="Content-type" CONTENT="text/html; charset=windows-1251">
+ <title>Billing System Admin Module</title>
+</head>
+<center>
+<b>
+Billing System ver 2.0.5 for ipfw firewall (C) Nikolay Morozov<br>
+Admin Interface<br>
+</b>
+</center>
+
+<p><a href=traftotal.php>Traffic Total Summary</a></p>
+
+<p>
+<b>Traffic Total By IP</b><br>
+<form name="web" method="get" action="trafip.php">
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+ <td>Month</td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+</tr>
+<tr>
+ <td>Year</td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+</tr>
+</table>
+ <input type="submit" value="Show" />
+</form>
+
+
+<p>
+<b>Show Traffic for user</b><br>
+<form name="web" method="get" action="showtraf.php">
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+ <td>IP</td>
+ <td><input type="text" name="user_ip" size="50" value="" maxlength="160" /></td>
+</tr>
+<tr>
+ <td>Month</td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+</tr>
+<tr>
+ <td>Year</td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+</tr>
+</table>
+ <input type="submit" value="Show" />
+</form>
+
+<p>
+<b>Show Squid log for user</b><br>
+<form name="web" method="get" action="squid.php">
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+ <td>IP</td>
+ <td><input type="text" name="user_ip" size="50" value="" maxlength="160" /></td>
+</tr>
+<tr>
+ <td>Month</td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+</tr>
+<tr>
+ <td>Year</td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+</tr>
+</table>
+ <input type="checkbox" value="yes" name="count_cache" id="check1">&nbsp;<label for="check1">Count cached traffic</label><br>
+ <input type="submit" value="Show" />
+</form>
+
+<p>
+<b>Cached and Denied traffic Report</b><br>
+<form name="web" method="get" action="ctraf.php">
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+ <td>Month</td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+</tr>
+<tr>
+ <td>Year</td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+</tr>
+</table>
+ <input type="submit" value="Show" />
+</form>
+
+</html>

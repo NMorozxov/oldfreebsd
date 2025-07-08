@@ -1,0 +1,4 @@
+*/30	*	*	*	*	root	/usr/local/sbin/logf.cron
+00	00	*	*	*	root	/bin/echo -n > /usr/local/squid/var/logs/store.log
+00	00	*	*	*	root	/bin/echo -n > /var/mail/root
+00	00	01	*	*	root	/usr/local/sbin/rotatesquidlog

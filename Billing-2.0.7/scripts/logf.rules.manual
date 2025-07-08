@@ -1,0 +1,9 @@
+#!/usr/local/bin/bash
+base=localhost:/usr/local/var/internet.gdb
+user=INTERNET
+pass=ipfwlog
+network=192.168.1
+start_rule=2000
+iip=192.168.1.1
+
+/usr/local/sbin/logf.rules ${base} ${user} ${pass} ${start_rule} ${network} ${iip}

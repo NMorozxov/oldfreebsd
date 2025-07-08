@@ -1,0 +1,7 @@
+ checkmail - a Kaspersky Antivirus scanner integration program
+ 
+ This program performs anti-virus scan on mail that is stored in mailboxes
+by mail.local program. It must be used insted of mail.local. After file is
+checked it executed original mail.local program. 
+
+					    Nicol Morozov nicol@aokp.ru

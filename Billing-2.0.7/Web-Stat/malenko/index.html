@@ -1,0 +1,93 @@
+<html>
+<head>
+ <meta HTTP-EQUIV="Content-type" CONTENT="text/html; charset=windows-1251">
+ <title>Billing System Admin Module</title>
+</head>
+<center>
+<style>
+body, a, p, td {FONT-FAMILY: Verdana, Arial, sans-serif; FONT-SIZE: 12px}
+form {margin:0; padding:0;}
+td {background: #DDDDDD;}
+a {color: #FF0000;}
+h3 {color: #aa5500; font-size: 14px;}
+</style>
+<p align="center" style="font-size:10px">Billing System ver 2.0.0 for ipfw firewall (C) Nicol Morozov<br>
+Admin Interface</p>
+<h2>Статистика интернет-трафика</h2>
+
+</center>
+
+<br><br>
+<p><a style="font-size: 18px; font-weight: bold;" href=traftotal.php>Весь трафик офиса (по месецам)</a></p>
+
+<br>
+<h3>Трафик для каждого компьютера за указанный месяц</h3>
+<div style="padding: 0 0 30 50;">
+<form name="web" method="get" action="trafip.php">
+<table border="0" cellspacing="2" cellpadding="5">
+<tr>
+ <td align="right"><b>Месяц</b></td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+ <td>(01, 02, ... , 12)</td>
+</tr>
+<tr>
+ <td align="right"><b>Год</b></td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+ <td>(2004, 2005, ...)</td>
+</tr>
+</table>
+ <input type="submit" value="Показать..." />
+</form>
+</div>
+
+<h3>Трафик за месяц для отдельного компьютера</h3>
+<div style="padding: 0 0 30 50;">
+<form name="web" method="get" action="showtraf.php">
+<table border="0" cellspacing="2" cellpadding="5">
+<tr>
+ <td align="right"><b>IP-адрес компьютера</b></td>
+ <td><input type="text" name="user_ip" size="50" value="192.168.0." maxlength="160" /></td>
+ <td>(192.168.0.<b>20</b>, 192.168.0.<b>37</b>, ....)</td>
+</tr>
+<tr>
+ <td align="right"><b>Месяц</b></td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+ <td>(01, 02, ... , 12)</td>
+</tr>
+<tr>
+ <td align="right"><b>Год</b></td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+ <td>(2004, 2005, ...)</td>
+</tr>
+</table>
+ <input type="submit" value="Показать..." />
+</form>
+</div>
+
+
+<h3>Показать подробную статистику для отдельного компьютера с указанием серверов с которых скачивалась информация</h3>
+<div style="padding: 0 0 30 50;">
+<form name="web" method="get" action="squid.php">
+<table border="0" cellspacing="2" cellpadding="5">
+<tr>
+ <td align="right"><b>IP-адрес компьютера</b></td>
+ <td><input type="text" name="user_ip" size="50" value="192.168.0." maxlength="160" /></td>
+ <td>(192.168.0.<b>20</b>, 192.168.0.<b>37</b>, ....)</td>
+</tr>
+<tr>
+ <td align="right"><b>Месяц</b></td>
+ <td><input type="text" name="d_mon" size="50" value="" maxlength="160" /></td>
+ <td>(01, 02, ... , 12)</td>
+</tr>
+<tr>
+ <td align="right"><b>Год</b></td>
+ <td><input type="text" name="d_year" size="50" value="" maxlength="160" /></td>
+ <td>(2004, 2005, ...)</td>
+</tr>
+</table>
+ <input type="submit" value="Показать..." />
+</form>
+</div>
+
+
+</html>

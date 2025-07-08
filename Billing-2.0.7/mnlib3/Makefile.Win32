@@ -1,0 +1,27 @@
+CC		= cl
+#CFLAGS		= /D__WIN32__ /O3 /G6 /QaxiM /GF
+CFLAGS		= /D__WIN32__ /O2 /G6 /GF
+INCLUDE_FLAGS	= /I.
+LIBS            = 
+CFLAGS_ALL	= $(CFLAGS) $(INCLUDE_FLAGS)
+
+MNLIB_OBJS	= stringop.obj token.obj checks.obj month.obj round.obj
+MNLIB_SRCS	= stringop.c token.c checks.c month.c round.c
+
+.c.obj:
+	$(CC) /c $(CFLAGS_ALL) $< 
+
+mnlib: $(MNLIB_OBJS)
+	$(CC) /LDd /Femnlib3.dll mnlib.def mnlib.res $(MNLIB_OBJS) $(LIBS)
+        implib -a mnlib3b.lib mnlib3.dll
+        upx -9 mnlib3.dll
+
+all: mnlib
+
+clean:
+	del *.obj 
+        del mnlib3.dll
+        del mnlib3.exp
+        del *.lib
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.
